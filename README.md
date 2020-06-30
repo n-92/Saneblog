@@ -1,4 +1,4 @@
-# Saneblog
+# Saneblog (Bottle blog)
 A minimalistic blogging platform because I am sick and tired of finding a blogging platform that is not bloated with unnecessary features.  Bottle(a microframework for Python) is required for this project
 
 ## Below is the technical diagram.
