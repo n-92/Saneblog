@@ -1,6 +1,9 @@
 # Saneblog (Bottle blog)
 A minimalistic blogging platform because I am sick and tired of finding a blogging platform that is not bloated with unnecessary features.  Bottle(a microframework for Python) is required for this project
 
+## If you want to see how it works
+[![Watch the video](https://firstsiteguide.com/wp-content/uploads/2018/04/what-is-a-blog-641x400-2-1-641x400.jpg)](https://youtu.be/Z4SKbOtTAi0)
+
 ## Below is the technical diagram.
 ![alt text](https://github.com/o92/Saneblog/blob/master/Overview.PNG)
 
