@@ -4,7 +4,31 @@ A minimalistic blogging platform because I am sick and tired of finding a bloggi
 ## Below is the technical diagram.
 ![alt text](https://github.com/o92/Saneblog/blob/master/Overview.PNG)
 
+## Credentials file 
+config = {
+    'user': 'YourMySQLuser',
+    'password': 'YourMySQL user password',
+    'host': 'localhost',
+    'port': '3306',
+    'database': 'DatabaseName',
+    'raise_on_warnings': True,
+}
+
+
+firebaseConfig= {
+        "apiKey": "[getFromFireBaseConsole]",
+        "authDomain": "[domaingetfromfirebaseconsole].firebaseapp.com",
+        "databaseURL": "https://url",
+        "projectId": "[project-id-fromfirebaseConsole]",
+        "storageBucket": "[ifany]",
+        "messagingSenderId": "[Firebase Console Numeric Digits]",
+        "appId": "[Your app Id]"
+}
+
+
 ## Schema is as follows
+```sql
+
 CREATE TABLE `Comments` (
   `guid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `dateCreated` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -32,3 +56,4 @@ CREATE TABLE `Likes` (
   `dateCreated` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
