@@ -5,6 +5,7 @@ A minimalistic blogging platform because I am sick and tired of finding a bloggi
 ![alt text](https://github.com/o92/Saneblog/blob/master/Overview.PNG)
 
 ## Credentials file 
+```python
 config = {
     'user': 'YourMySQLuser',
     'password': 'YourMySQL user password',
@@ -24,7 +25,7 @@ firebaseConfig= {
         "messagingSenderId": "[Firebase Console Numeric Digits]",
         "appId": "[Your app Id]"
 }
-
+```
 
 ## Schema is as follows
 ```sql
