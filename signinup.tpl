@@ -1,27 +1,46 @@
 % rebase('base.tpl')
 <div class="container">
-	<div class="row">
-		<div class="col">
+	<div class="col-12">
+		<div class="row">
 			<h2>Sign In</h2>
 			<form action="/signin" method="POST">
-				<label for="email">email:</label>
-				<input type="text" name="email" id="email" value="" />
-				<label for="password">password:</label>
-				<input type="password" name="password" id="password" value="" />
-				<input type="submit" value="submit">
+				<div class="form-row">
+				 	<div class="form-group col-md-6">
+				      <label for="email">Email</label>
+				      <input type="email" class="form-control" name="email" id="email"placeholder="Email">
+				    </div>
+				</div>
+				<div class="form-row">
+				 	<div class="form-group col-md-6">
+				      <label for="password">Password</label>
+				       <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password">
+				    </div>
+				</div>
+				<div class="form-group col-md-6">
+					<input type="submit" class="btn btn-primary" value="Sign In">
+				</div>
 			</form>
 		</div>
-		
-		<div class="w-100"></div>
 
-		<div class="col">
-			<h2>Sign Up</h2>
+		<div class="help-block"></div>
+		<div class="row">
+			<h2>Register</h2>
 			<form action="/signup" method="POST">
-				<label for="email">email:</label>
-				<input type="text" name="email" id="email" value="" />
-				<label for="password">password:</label>
-				<input type="password" name="password" id="password" value="" />
-				<input type="submit" value="submit">
+				<div class="form-row">
+				 	<div class="form-group col-md-6">
+				      <label for="email">Email</label>
+				      <input type="email" class="form-control" name="email" id="email"placeholder="Email">
+				    </div>
+				</div>
+				<div class="form-row">
+				 	<div class="form-group col-md-6">
+				      <label for="password">Password</label>
+				       <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password">
+				    </div>
+				</div>
+				<div class="form-group col-md-6">
+					<input type="submit" class="btn btn-primary" value="Register">
+				</div>
 			</form>
 		</div>
 	</div>
