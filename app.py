@@ -9,6 +9,9 @@ from jose import jwt
 import urllib, json
 import credentials
 
+
+from bson import json_util
+
 target_audience ="collaborative-mapping-proto"
 bottle.BaseRequest.MEMFILE_MAX = 1024 * 1024 * 1024   #(or whatever you want)
 certificate_url = 'https://www.googleapis.com/robot/v1/metadata/x509/securetoken@system.gserviceaccount.com'
@@ -49,9 +52,10 @@ def returnPage(postnumber):
 def returnPage():
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor(buffered=True)
-    cursor.execute("SELECT GUID,title FROM Posts order by dateCreated DESC")
+    cursor.execute("SELECT GUID,title,dateCreated,createdBy FROM Posts order by dateCreated DESC")
     guidsTitles = cursor.fetchall()
     cursor.close()
+    
     return template('pages.tpl',guidsTitlesList=guidsTitles)
 
 @app.route('/post',method='GET')
@@ -255,8 +259,15 @@ def like():
 @app.route('/',method='GET')
 def index():
     idToken = request.get_cookie('idToken')
-    # print idToken
-    return template('signinup.tpl')
+    try:
+        userIdToken = jwt.decode(idToken, certs, algorithms='RS256', audience=target_audience)
+    except Exception as e:
+        idToken = "error"
+
+    if idToken is not "error":
+        return redirect('/getpostlist')
+    else:
+        return redirect('/signin')
 
 @app.route('/signin',method='POST')
 def signin():

@@ -1,10 +1,15 @@
 % rebase('base.tpl')
-<div>
-	<input type="text" id="titlebox" name="titlebox" value="{{!title}}">
-</div>
-<div id="summernote"></div>
+<div class="container">
+	<div class="help-block"></div>
+	<div style="text-align:center;">
+		<input style="text-align:center;width: 100%;" type="text" id="titlebox" name="titlebox" placeholder="Title" value="{{!title}}"required>
+	</div>
+	<hr/>
+	<div id="summernote"></div>
 
-<button id="save" type="button">Save</button>
+	<button class="btn btn-primary" id="save" type="button">Save</button>
+</div>
+
 
 <script>
 	var date = new Date();
@@ -25,7 +30,7 @@
 					dateUpdated: 	date.toISOString().slice(0, 19).replace('T', ' '),
 			 })
 		  }).done( function(data) {   	
-				console.log(data["record"])
+				alert(data["record"]==1?"Update success":"Error encountered")
 	 	});
 	});
 </script>

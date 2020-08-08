@@ -25,5 +25,19 @@
 			</div>
 		</div>
 		{{!base}}
+
 	</body>
+	<!-- Footer -->
+		<footer class="page-footer font-small blue">
+
+		  <!-- Copyright -->
+		  <div class="footer-copyright text-center py-3">Naing <3 <a href="https://github.com/o92/Saneblog"> Saneblog</a>:
+		    <a href="/post"> Create a Post</a>
+		    ||
+		    <a href="/getpostlist"> View Posts</a>
+		  </div>
+		  <!-- Copyright -->
+
+		</footer>
+		<!-- Footer -->
 </html>

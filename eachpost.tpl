@@ -3,24 +3,23 @@
 <div class="container">
 	<h1> Posts </h1>
 	
-	<div class="row">
+	
 		%if posts:
 	      %for post in posts:
 	        	<div class="mt-5"> {{!post[0]}} </div>
 	        	<input type="text" id="postguid" name="postguid" hidden value="{{!post[1]}}" />
-				<button id="likePost" type="button">Like [{{like_count}}]</button>
+				<button class="btn btn-primary" id="likePost" type="button">Like [{{like_count}}]</button>
 	        	<hr/>
 	        %end
 	     %end
-	 </div>
-	
+		
 	<div class="row" id="commentlist">
 	     %if comments:
 	      %for comment in comments:
 	        	<div class="mt-5"> {{!comment[0]}} </div>
 	        	<div class="mt-5"> {{!comment[1]}} </div>
 	        	<div class="mt-5"> {{!comment[2]}} </div>
-	        	<button id="deletecomment" value="{{!comment[3]}}">Delete</button>
+	        	<button class="btn btn-primary" id="deletecomment" value="{{!comment[3]}}">Delete</button>
 	        	<hr/>
 	        %end
 	     %end
@@ -31,7 +30,7 @@
 	     	
 	 </div>
 	 <div class="row">
-	     	<button id="postcomment">Comment</button>
+	     	<button class="btn btn-primary" id="postcomment">Comment</button>
 	 </div>
 
     
