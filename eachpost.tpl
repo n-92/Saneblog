@@ -27,7 +27,10 @@
 	</div>
 
 	<div class="row">
-	     	<input type="text" name="comment" id="comment">
+	     	<textarea name="comment" id="comment"></textarea>
+	     	
+	 </div>
+	 <div class="row">
 	     	<button id="postcomment">Comment</button>
 	 </div>
 
@@ -41,7 +44,7 @@
 		$.ajax({
 			  	type: "POST",
 				contentType: "application/json; charset=utf-8",
-			  	url:"http://192.168.0.103:8889/like",
+			  	url:"http://192.168.0.106:8889/like",
 			  	data: JSON.stringify({
 			  		postguid: $("#postguid").val(),
 					dateCreated: date.toISOString().slice(0, 19).replace('T', ' '),
@@ -58,7 +61,7 @@
 		$.ajax({
 			  	type: "POST",
 				contentType: "application/json; charset=utf-8",
-			  	url:"http://192.168.0.103:8889/comment",
+			  	url:"http://192.168.0.106:8889/comment",
 			  	data: JSON.stringify({
 			  		postguid: window.location.href.split('/').slice(-1)[0],
 			  		comment: $("#comment").val(),
@@ -78,7 +81,7 @@
 			$.ajax({
 			  	type: "POST",
 				contentType: "application/json; charset=utf-8",
-			  	url:"http://192.168.0.103:8889/deletecomment",
+			  	url:"http://192.168.0.106:8889/deletecomment",
 			  	data: JSON.stringify({
 						commentguid: this.value,
 

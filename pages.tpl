@@ -4,9 +4,10 @@
 	<ul>
 		%for gt in guidsTitlesList:
 			<input type="input" name="postguid" id="postguid" hidden value="{{!gt[0]}}">
-			<li><a href="http://192.168.0.103:8889/getposts/{{!gt[0]}}">{{!gt[1]}}</a></li>
-			<a href="http://192.168.0.103:8889/update/{{!gt[0]}}">Edit</a>
-			<button id="deletepost" value="{{!gt[0]}}">Delete</button>
+			<li><a href="http://192.168.0.106:8889/getposts/{{!gt[0]}}">{{!gt[1]}}</a></li>
+			<a href="http://192.168.0.106:8889/update/{{!gt[0]}}">Edit</a>
+			<!-- <button id="deletepost" value="{{!gt[0]}}">Delete</button> -->
+			<a id="deletepost" data-value="{{!gt[0]}}">Delete</a>
 			
     	%end
 	</ul>
@@ -15,15 +16,15 @@
 <script>
 	var date = new Date();
 	
-	$("button#deletepost").click(function() {
+	$("a#deletepost").click(function() {
 		alert(this.id);
-		alert(this.value);
+		alert($(this).data("value"));
 		$.ajax({
 		  	type: "POST",
 			contentType: "application/json; charset=utf-8",
-		  	url:"http://192.168.0.103:8889/delete",
+		  	url:"http://192.168.0.106:8889/delete",
 		  	data: JSON.stringify({
-					postguid: this.value,
+					postguid: $(this).data("value"),
 
 			 })
 		  }).done( function(data) {   	
@@ -37,7 +38,7 @@
 	// 	$.ajax({
 	// 	  	type: "GET",
 	// 		contentType: "application/json; charset=utf-8",
-	// 	  	url:"http://192.168.0.103:8889/update/"+this.value,
+	// 	  	url:"http://192.168.0.106:8889/update/"+this.value,
 	// 	  //data: JSON.stringify({
 	// 			// 	postguid: this.value,
 	// 	  // })

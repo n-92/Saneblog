@@ -278,7 +278,11 @@ def signup():
     password =  request.forms.get('password')
     signupstatus = auth.create_user_with_email_and_password(email,password)
     return {"signupstatus": signupstatus }
+
+@app.route('/file/<name>',method='GET')
+def getStatic(name):
+    return static_file(name,root='static/')
    
 
 if __name__ == "__main__":
-    run(app=app,host='192.168.0.103', port=8889, debug=True)
+    run(app=app,host='192.168.0.106', port=8889, debug=True)

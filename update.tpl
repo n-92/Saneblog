@@ -17,7 +17,7 @@
 		$.ajax({
 		  	type: "POST",
 			contentType: "application/json; charset=utf-8",
-		  	url:"http://192.168.0.103:8889/save",
+		  	url:"http://192.168.0.106:8889/save",
 		  	data: JSON.stringify({
 					title: 			$("#titlebox").val(),
 					articleText: 	$('#summernote').summernote('code'),
